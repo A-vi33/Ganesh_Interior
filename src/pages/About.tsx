@@ -149,57 +149,6 @@ const About = () => {
           </div>
         </div>
       </section>
-
-      {/* Why Choose Us */}
-      <section className="py-20 bg-primary-600 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">Why Choose SMK Interiors?</h2>
-            <p className="text-xl text-primary-100 max-w-2xl mx-auto">
-              We bring years of experience and a passion for creating beautiful spaces
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-2xl font-bold">10+</span>
-              </div>
-              <h3 className="text-xl font-semibold mb-4">Years Experience</h3>
-              <p className="text-primary-100">
-                Over a decade of expertise in interior design and space transformation
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-2xl font-bold">500+</span>
-              </div>
-              <h3 className="text-xl font-semibold mb-4">Projects Completed</h3>
-              <p className="text-primary-100">
-                Successfully delivered projects across various categories and styles
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-2xl font-bold">100%</span>
-              </div>
-              <h3 className="text-xl font-semibold mb-4">Client Satisfaction</h3>
-              <p className="text-primary-100">
-                Committed to exceeding expectations and delivering exceptional results
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-2xl font-bold">24/7</span>
-              </div>
-              <h3 className="text-xl font-semibold mb-4">Support Available</h3>
-              <p className="text-primary-100">
-                Round-the-clock support and consultation for all your design needs
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   );
 };
