@@ -21,32 +21,26 @@ const Contact = () => {
     setSubmitStatus('idle');
 
     // EmailJS configuration
-    // You'll need to replace these with your actual EmailJS credentials
-    const serviceId = 'service_fqlucdp'; // Replace with your EmailJS service ID
-    const templateId = 'template_8dc6wwm'; // Replace with your EmailJS template ID
-    const publicKey = '2dK7kJ-_mcBsSPvjM'; // Replace with your EmailJS public key
+    // Replace these with your actual EmailJS credentials
+    const serviceId = 'service_fqlucdp'; // Your EmailJS service ID
+    const ownerTemplateId = 'template_8dc6wwm'; // Owner notification template ID
+    const autoReplyTemplateId = 'template_7rot2e9'; // Auto-reply template ID (replace with your actual ID)
+    const publicKey = '2dK7kJ-_mcBsSPvjM'; // Your EmailJS public key
 
     if (form.current) {
-      emailjs.sendForm(serviceId, templateId, form.current, publicKey)
+      // Send to owner
+      emailjs.sendForm(serviceId, ownerTemplateId, form.current, publicKey)
         .then((result) => {
-          console.log('Email sent successfully:', result.text);
-          setSubmitStatus('success');
-          // Reset form
-          setFormData({
-            name: '',
-            email: '',
-            phone: '',
-            service: '',
-            message: ''
-          });
+          // Send auto-reply to sender
+          emailjs.sendForm(serviceId, autoReplyTemplateId, form.current, publicKey)
+            .then(() => {
+              setSubmitStatus('success');
+              setFormData({ name: '', email: '', phone: '', service: '', message: '' });
+            })
+            .catch(() => setSubmitStatus('error'));
         })
-        .catch((error) => {
-          console.error('Email sending failed:', error.text);
-          setSubmitStatus('error');
-        })
-        .finally(() => {
-          setIsSubmitting(false);
-        });
+        .catch(() => setSubmitStatus('error'))
+        .finally(() => setIsSubmitting(false));
     }
   };
 
